@@ -11,3 +11,45 @@ iris_df = pd.DataFrame(data=iris.data, columns=iris.feature_names)
 iris_df['species'] = iris.target
 iris_df.head()
 
+
+
+Question 2.1 : Exploratory Data Analysis (EDA)
+
+Explanation:
+• Print the summary statistics of the dataset (mean, median, mode, standard deviation, etc.).
+• Check for any missing values in the dataset and handle them appropriately.
+• Plot the distribution of each feature using histograms.
+• Visualize the pairwise relationships between features using a pair plot (or scatter plot matrix).
+
+
+
+
+import pandas as pd
+import numpy as np
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+from sklearn.datasets import load_iris
+iris = load_iris()
+
+iris_df = pd.DataFrame(data=iris.data, columns=iris.feature_names)
+iris_df['species'] = iris.target
+
+print("Summary Statistics:")
+print(iris_df.describe())   
+print("\nMedian:")
+print(iris_df.median())    
+print("\nMode:")
+print(iris_df.mode())
+
+print("\nChecking for missing values:")
+print(iris_df.isnull().sum())
+
+iris_df.hist(bins=20, figsize=(12, 8))
+plt.suptitle("Distribution of Features")
+plt.show()
+
+sns.pairplot(iris_df, hue='species', diag_kind='hist')
+plt.suptitle("Pairwise Relationships Between Features", y=1.02)
+plt.show()
+
