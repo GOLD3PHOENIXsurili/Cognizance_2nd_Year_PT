@@ -1,1 +1,13 @@
+Question 1.1 : Load the Dataset
+
+Explanation: Load the Iris dataset from scikit-learn’s datasets module and Display the first 5 rows of the dataset to understand its structure.
+
+
+
+from sklearn.datasets import load_iris
+import pandas as pd
+iris = load_iris()
+iris_df = pd.DataFrame(data=iris.data, columns=iris.feature_names)
+iris_df['species'] = iris.target
+iris_df.head()
 
