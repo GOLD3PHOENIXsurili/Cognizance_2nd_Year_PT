@@ -53,3 +53,42 @@ sns.pairplot(iris_df, hue='species', diag_kind='hist')
 plt.suptitle("Pairwise Relationships Between Features", y=1.02)
 plt.show()
 
+
+
+Question 3.1 : Feature Scaling
+
+Explanation:
+• Standardize the features by removing the mean and scaling to unit variance using StandardScaler from scikit-learn.
+• Alternatively, perform Min-Max scaling on the features using MinMaxScaler.
+
+
+
+from sklearn.preprocessing import StandardScaler, MinMaxScaler
+import pandas as pd
+
+from sklearn.datasets import load_iris
+iris = load_iris()
+
+iris_df = pd.DataFrame(data=iris.data, columns=iris.feature_names)
+
+scaler_standard = StandardScaler()
+iris_standardized = scaler_standard.fit_transform(iris_df)
+
+iris_standardized_df = pd.DataFrame(iris_standardized, columns=iris.feature_names)
+print("Standardized Features:")
+print(iris_standardized_df.head()) 
+
+scaler_minmax = MinMaxScaler()
+iris_minmax_scaled = scaler_minmax.fit_transform(iris_df)
+
+iris_minmax_scaled_df = pd.DataFrame(iris_minmax_scaled, columns=iris.feature_names)
+print("\nMin-Max Scaled Features:")
+print(iris_minmax_scaled_df.head())
+
+
+
+
+Question 3.2 : Encoding the Target Variable
+
+Explanation:
+• Encode the categorical target variable (species) into numeric values using label encoding.
