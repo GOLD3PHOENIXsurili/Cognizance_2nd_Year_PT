@@ -139,6 +139,14 @@ root.mainloop()
 
 # Close the database connection
 conn.close()
+![image](https://github.com/user-attachments/assets/0169e776-30b3-423a-862c-3ef03d327d3b)
+
+![image](https://github.com/user-attachments/assets/cfa4f032-3b44-4d0b-ab78-55004363ea87)
+
+![image](https://github.com/user-attachments/assets/8e24767a-fc12-4403-af91-c54fc28a3fb5)
+
+![image](https://github.com/user-attachments/assets/b753a9ee-e4cc-4d56-bf6b-33f07187b263)
+
 
 
 
